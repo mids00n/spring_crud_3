@@ -5,12 +5,15 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.Student;
 import com.example.demo.repository.StudentRepository;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 import java.util.Optional;
 @Service
+@RequiredArgsConstructor
 public class StudentService {
-	 @Autowired
-	    private StudentRepository studentRepository;
+	 
+	    private final StudentRepository studentRepository;
 	 
 	 public List<Student> getAllStudents(){
 		 return studentRepository.findAll();
